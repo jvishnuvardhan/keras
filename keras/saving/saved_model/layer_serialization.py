@@ -170,6 +170,5 @@ class IndexLookupLayerSavedModelSaver(LayerSavedModelSaver):
   def python_properties(self):
     # TODO(kathywu): Add python property validator
     metadata = self._python_properties_internal()
-    if metadata['config'].get('has_static_table', False):
-      metadata['config']['vocabulary'] = None
+    metadata['config']['vocabulary'] = None
     return metadata

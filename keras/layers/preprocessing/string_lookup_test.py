@@ -167,8 +167,8 @@ class StringLookupVocabularyTest(keras_parameterized.TestCase,
 
   def test_no_vocab(self):
     with self.assertRaisesRegex(
-        ValueError, "You must set the layer's vocabulary"):
-      layer = string_lookup.StringLookup()
+        RuntimeError, "you must set the layer's vocabulary"):
+      layer = string_lookup.StringLookup(output_mode="binary")
       layer([["a"]])
 
   def test_one_hot_output(self):
