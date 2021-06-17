@@ -44,6 +44,33 @@ class AveragePooling1D(keras_layers.AveragePooling1D, base.Layer):
       `(batch, length, channels)` while `channels_first` corresponds to
       inputs with shape `(batch, channels, length)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.AveragePooling1D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.AveragePooling1D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -87,6 +114,33 @@ def average_pooling1d(inputs, pool_size, strides,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.average_pooling1d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.AveragePooling1D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.average_pooling1d` is deprecated and '
                 'will be removed in a future version. '
@@ -117,6 +171,33 @@ class MaxPooling1D(keras_layers.MaxPooling1D, base.Layer):
       `(batch, length, channels)` while `channels_first` corresponds to
       inputs with shape `(batch, channels, length)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.MaxPooling1D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.MaxPooling1D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -160,6 +241,33 @@ def max_pooling1d(inputs, pool_size, strides,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.max_pooling1d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.MaxPooling1D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.max_pooling1d` is deprecated and '
                 'will be removed in a future version. '
@@ -194,6 +302,33 @@ class AveragePooling2D(keras_layers.AveragePooling2D, base.Layer):
       `(batch, height, width, channels)` while `channels_first` corresponds to
       inputs with shape `(batch, channels, height, width)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.AveragePooling2D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.AveragePooling2D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -238,6 +373,33 @@ def average_pooling2d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.average_pooling2d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.AveragePooling2D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.average_pooling2d` is deprecated and '
                 'will be removed in a future version. '
@@ -270,6 +432,33 @@ class MaxPooling2D(keras_layers.MaxPooling2D, base.Layer):
       `(batch, height, width, channels)` while `channels_first` corresponds to
       inputs with shape `(batch, channels, height, width)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.MaxPooling2D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.MaxPooling2D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -314,6 +503,33 @@ def max_pooling2d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.max_pooling2d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.MaxPooling2D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.max_pooling2d` is deprecated and '
                 'will be removed in a future version. '
@@ -348,6 +564,33 @@ class AveragePooling3D(keras_layers.AveragePooling3D, base.Layer):
       corresponds to inputs with shape
       `(batch, channels, depth, height, width)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.AveragePooling3D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.AveragePooling3D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -394,6 +637,33 @@ def average_pooling3d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.AveragePooling3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.average_pooling3d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.AveragePooling3D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.average_pooling3d` is deprecated and '
                 'will be removed in a future version. '
@@ -428,6 +698,33 @@ class MaxPooling3D(keras_layers.MaxPooling3D, base.Layer):
       corresponds to inputs with shape
       `(batch, channels, depth, height, width)`.
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   pooling = tf.compat.v1.layers.MaxPooling3D(pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   pooling = tf.keras.layers.MaxPooling3D(pool_size=2, strides=2)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, pool_size, strides,
@@ -472,6 +769,33 @@ def max_pooling3d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [tf.layers section of the migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.MaxPooling3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.max_pooling3d(x, pool_size=2, strides=2)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.MaxPooling3D(pool_size=2, strides=2)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.max_pooling3d` is deprecated and '
                 'will be removed in a future version. '
