@@ -81,6 +81,32 @@ class Conv1D(keras_layers.Conv1D, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.Conv1D(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.Conv1D(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -201,6 +227,33 @@ def conv1d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.conv1d(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.Conv1D(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.conv1d` is deprecated and '
                 'will be removed in a future version. '
@@ -288,6 +341,33 @@ class Conv2D(keras_layers.Conv2D, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.Conv2D(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.Conv2D(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -415,6 +495,33 @@ def conv2d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.conv2d(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.Conv2D(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.conv2d` is deprecated and '
                 'will be removed in a future version. '
@@ -503,6 +610,33 @@ class Conv3D(keras_layers.Conv3D, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.Conv3D(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.Conv3D(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -631,6 +765,33 @@ def conv3d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv3D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.conv3d(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.Conv3D(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.conv3d` is deprecated and '
                 'will be removed in a future version. '
@@ -720,6 +881,33 @@ class SeparableConv1D(keras_layers.SeparableConv1D, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.SeparableConv1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.SeparableConv1D(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.SeparableConv1D(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -836,6 +1024,33 @@ class SeparableConv2D(keras_layers.SeparableConv2D, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.SeparableConv2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.SeparableConv2D(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.SeparableConv2D(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -978,6 +1193,33 @@ def separable_conv1d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.SeparableConv1D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.separable_conv1d(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.SeparableConv1D(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.separable_conv1d` is deprecated and '
                 'will be removed in a future version. '
@@ -1107,6 +1349,33 @@ def separable_conv2d(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.SeparableConv2D`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.separable_conv2d(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.SeparableConv2D(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.separable_conv2d` is deprecated and '
                 'will be removed in a future version. '
@@ -1188,6 +1457,33 @@ class Conv2DTranspose(keras_layers.Conv2DTranspose, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv2DTranspose`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.Conv2DTranspose(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.Conv2DTranspose(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self, filters,
@@ -1303,6 +1599,33 @@ def conv2d_transpose(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv2DTranspose`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.conv2d_transpose(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.Conv2DTranspose(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.conv2d_transpose` is deprecated and '
                 'will be removed in a future version. '
@@ -1375,6 +1698,33 @@ class Conv3DTranspose(keras_layers.Conv3DTranspose, base.Layer):
     trainable: Boolean, if `True` also add variables to the graph collection
       `GraphKeys.TRAINABLE_VARIABLES` (see `tf.Variable`).
     name: A string, the name of the layer.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv3DTranspose`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   conv = tf.compat.v1.layers.Conv3DTranspose(filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   conv = tf.keras.layers.Conv3DTranspose(filters=3, kernels_size=3)
+  ```
+  @end_compatibility
   """
 
   def __init__(self,
@@ -1485,6 +1835,33 @@ def conv3d_transpose(inputs,
 
   Raises:
     ValueError: if eager execution is enabled.
+
+
+  @compatibility(TF2)
+  This API is not compatible with eager execution or `tf.function`.
+
+  Please refer to [migration guide]
+  (https://www.tensorflow.org/guide/migrate#models_based_on_tflayers)
+  for more details on migrating a TF1 model to Keras. In TF2 the corresponding
+  layer is `tf.keras.layers.Conv3DTranspose`.
+
+
+  #### Structural Mapping to Native TF2
+
+  None of the supported arguments have changed name.
+
+  Before:
+
+  ```python
+   y = tf.compat.v1.layers.conv3d_transpose(x, filters=3, kernel_size=3)
+  ```
+
+  After:
+
+  ```python
+   y = tf.keras.layers.Conv3DTranspose(filters=3, kernels_size=3)(x)
+  ```
+  @end_compatibility
   """
   warnings.warn('`tf.layers.conv3d_transpose` is deprecated and '
                 'will be removed in a future version. '
