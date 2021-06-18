@@ -46,7 +46,7 @@ def make_variable(name,
                   use_resource=None,
                   collections=None,
                   synchronization=tf.VariableSynchronization.AUTO,
-                  aggregation=tf.compat.v1.VariableAggregation.NONE,
+                  aggregation=tf.VariableAggregation.NONE,
                   partitioner=None):  # pylint: disable=unused-argument
   """Temporary util to create a variable (relies on `variable_scope.variable`).
 
@@ -105,25 +105,36 @@ def make_variable(name,
       initializer = initializer()
     init_val = functools.partial(initializer, shape, dtype=dtype)
     variable_dtype = dtype.base_dtype
-  if use_resource is None:
-    use_resource = True
 
   # TODO(apassos,rohanj) figure out how to remove collections from here so we
   # can remove the V1.
   variable_shape = tf.TensorShape(shape)
-  return tf.compat.v1.Variable(
-      initial_value=init_val,
-      name=name,
-      trainable=trainable,
-      caching_device=caching_device,
-      dtype=variable_dtype,
-      validate_shape=validate_shape,
-      constraint=constraint,
-      use_resource=use_resource,
-      collections=collections,
-      synchronization=synchronization,
-      aggregation=aggregation,
-      shape=variable_shape if variable_shape else None)
+  if collections or use_resource is False:  # pylint:disable=g-bool-id-comparison
+    return tf.compat.v1.Variable(
+        initial_value=init_val,
+        name=name,
+        trainable=trainable,
+        caching_device=caching_device,
+        dtype=variable_dtype,
+        validate_shape=validate_shape,
+        constraint=constraint,
+        use_resource=use_resource,
+        collections=collections,
+        synchronization=synchronization,
+        aggregation=aggregation,
+        shape=variable_shape if variable_shape else None)
+  else:
+    return tf.Variable(
+        initial_value=init_val,
+        name=name,
+        trainable=trainable,
+        caching_device=caching_device,
+        dtype=variable_dtype,
+        validate_shape=validate_shape,
+        constraint=constraint,
+        synchronization=synchronization,
+        aggregation=aggregation,
+        shape=variable_shape if variable_shape else None)
 
 
 def collect_previous_mask(input_tensors):

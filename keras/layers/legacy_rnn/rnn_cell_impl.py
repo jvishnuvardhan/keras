@@ -117,7 +117,7 @@ def _concat(prefix, suffix, static=False):
     p = prefix
     p_static = tf.get_static_value(prefix)
     if p.shape.ndims == 0:
-      p = tf.compat.v1.expand_dims(p, 0)
+      p = tf.expand_dims(p, 0)
     elif p.shape.ndims != 1:
       raise ValueError("prefix tensor must be either a scalar or vector, "
                        "but saw tensor: %s" % p)
@@ -131,7 +131,7 @@ def _concat(prefix, suffix, static=False):
     s = suffix
     s_static = tf.get_static_value(suffix)
     if s.shape.ndims == 0:
-      s = tf.compat.v1.expand_dims(s, 0)
+      s = tf.expand_dims(s, 0)
     elif s.shape.ndims != 1:
       raise ValueError("suffix tensor must be either a scalar or vector, "
                        "but saw tensor: %s" % s)
@@ -290,7 +290,7 @@ class RNNCell(base_layer.Layer):
             "input param. Input tensor dtype: {}, dtype: {}".format(
                 inputs.dtype, dtype))
 
-      batch_size = inputs.shape.dims[0].value or tf.compat.v1.shape(inputs)[0]
+      batch_size = inputs.shape.dims[0].value or tf.shape(inputs)[0]
       dtype = inputs.dtype
     if batch_size is None or dtype is None:
       raise ValueError(
